@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileExample {
+class FileExample {
 
   /*
 
@@ -38,15 +38,24 @@ public class FileExample {
 
   */
 
-	static List<File> getFiles(File start) throws IOException {
+	public List<File> getFiles(File start) throws IOException {
 	  File f = start;
 	  List<File> result = new ArrayList<>();
-	  result.add(start);
+    if(start.listFiles() == null) {
+      result.add(start);
+    }
 	  if(f.isDirectory()) {
       File[] paths = f.listFiles();
       for(File subFile: paths) {
-        result.add(subFile);
+        if(subFile.listFiles() != null){
+          List<File> buffer = getFiles(subFile);
+          result.addAll(buffer);
+        }
+        else {
+          result.add(subFile);
+        }
       }
+      
 	  }
 	  return result;
 	}
