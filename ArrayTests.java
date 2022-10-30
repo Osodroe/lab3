@@ -9,7 +9,6 @@ public class ArrayTests {
     assertArrayEquals(new int[]{ 3 }, input1);
 	}
 
-
   @Test
   public void testReversed0() {
     int[] input1 = { };

@@ -1,4 +1,3 @@
-
 import java.util.NoSuchElementException;
 
 class Node {
@@ -14,7 +13,7 @@ class LinkedList {
     public LinkedList() {
         this.root = null;
     }
-    /**
+    /*
      * Adds the value to the _beginning_ of the list
      * @param value
      */
@@ -22,7 +21,7 @@ class LinkedList {
         // Just add at the beginning
         this.root = new Node(value, this.root);
     }
-    /**
+    /*
      * Adds the value to the _end_ of the list
      * @param value
      */
@@ -46,13 +45,13 @@ class LinkedList {
             }
         }
     }
-    /**
+    /*
      * @return the value of the first element in the list
      */
     public int first() {
         return this.root.value;
     }
-    /**
+    /*
      * @return the value of the last element in the list
      */
     public int last() {
@@ -67,7 +66,7 @@ class LinkedList {
         }
         return n.value;
     }
-    /**
+    /*
      * @return a string representation of the list
      */
     public String toString() {
@@ -79,7 +78,7 @@ class LinkedList {
         }
         return s;
     }
-    /**
+    /*
      * @return the number of elements in the list
      */
     public int length() {
